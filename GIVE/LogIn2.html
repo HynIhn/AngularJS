@@ -1,0 +1,37 @@
+
+          <div class="container" style="padding: 50px" ng-controller="myCtrl as loginCtrl">
+            <div class="card mb-3" >
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://media.baodautu.vn/Images/chicuong/2021/06/29/du-lich.jpg" class="img-fluid rounded-start" alt="..." style="height: 100%">
+                  </div>
+                  <div class="col-md-8" ng-submit="loginCtrl.login()">
+                    <div class="card-body">
+                      <h5 class="card-title fs-3 fw-bolder" >Đăng nhập ~</h5>
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control us" id="floatingInput" placeholder="name@example.com" ng-model="loginCtrl.username" required>
+                        <label for="floatingInput">Username</label>
+                      </div>
+                      <div class="form-floating">
+                        <input type="password" class="form-control pw" id="floatingPassword" placeholder="Password" ng-model="loginCtrl.password" required> 
+                        <label for="floatingPassword">Password</label>
+                      </div>
+                      <div class="form-check" >
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">Ghi nhớ mật khẩu! </label>
+                      </div>
+                     
+                      <div class="text-center ">
+                        <span class="text-info ">Chưa có tài khoản nhấn</span> <a href="#!LogIn" class="text-danger ">Tại đây!</a>
+                      </div>
+                      <div class="float-end " style="padding:10px">
+                        <button type="button" class="btn btn-success subm" type="submit">Đăng nhập</button>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <script ></script>
+ 

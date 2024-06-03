@@ -1,0 +1,21 @@
+
+[
+    {
+     "ma":"001",
+     "fullname":"Nhi",
+     "email": "laji.sodu@gmail.com",
+     "phone": "0386706328",
+     "gender": "NỮ",
+     "country": "Việt Nam",
+     "nation": "Kinh"
+    },
+    {
+     "ma":"002",
+     "fullname":"Quang",
+     "email": "Quang@gmail.com",
+     "phone": "0523398467",
+     "gender": "NAM",
+     "country": "Mỹ",
+     "nation": "Thái"
+    }
+ ]

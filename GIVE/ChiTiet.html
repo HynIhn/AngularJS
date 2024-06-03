@@ -1,0 +1,420 @@
+
+          <!--SlideShow-->
+          <div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            </div>
+            <div class="carousel-inner" style="height: 70vh; min-height: 300px;">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="{{detailPro.image}}" class="d-block w-100" alt="...">
+                <div class="carousel-caption card-img-overlay d-flex align-items-center justify-content-center" style="margin-top: 180px;">
+                  <div class="bg-dark bg-opacity-50" style="padding: 15px;">
+                    <h5 class="text-light text-center fw-bolder">{{detailPro.name}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--Search2-->
+<div class="container" style="padding: 20px">
+    <form class="row gx-3 gy-2 align-items-center">
+        <div class="col-sm-4">
+          <label class="visually-hidden" for="specificSizeInputName">Tìm Kiếm</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Tìm Kiếm Tour">
+            <div class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+              </svg></i></div>
+          </div>
+    
+        </div>
+        <div class="col-sm-2">
+          <label class="visually-hidden" for="fromDate">Từ Ngày</label>
+         <div class="input-group">
+            <input type="text" class="form-control" id="fromDate" placeholder="Từ Ngày">
+            <div class="input-group-text"><i class="bi bi-calendar"></i></div>
+          </div>
+        </div>
+        <div class="col-sm-2">
+            <label class="visually-hidden" for="toDate">Đến Ngày</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="toDate" placeholder="Đến Ngày">
+              <div class="input-group-text"><i class="bi bi-calendar"></i></div>
+            </div>
+          </div>
+        <div class="col-sm-2">
+            <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+            <select class="form-select" id="specificSizeSelect">
+              <option selected>Trong Nước</option>
+              <option value="1">Ngoài Nước</option>
+              <option value="2">Tất Cả</option>
+            </select>
+          </div>
+        <div class="col-auto">
+          <button class="btn btn-warning">Tìm Kiếm</button>
+        </div>
+      </form>
+</div>
+<div class="container">
+    <div class="row col-12">
+        <div class="col-12 col-md-4">
+            THỜI GIAN: <strong>{{products[index].duration}}</strong><br>
+            ĐIỂM XUẤT PHÁT: <strong>TP. Hồ Chí Minh</strong>
+        </div>
+        
+        <div class="col-12 col-md-4">
+            PHƯƠNG TIỆN: <strong>{{products[index].transport}}</strong> <br>
+            ĐIỂM ĐẾN: <strong>{{products[index].name}}</strong>
+        </div>
+        <div class="col-12 col-md-4 mt-3 mt-md-0">
+            <div class="card text-center mb-3 bg-secondary " style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">HỖ TRỢ KHÁCH HÀNG</h5>
+                  <p class="card-text">Hot Line: 0386706328 <br>Info: laji.sodu@gmail.com </p>
+                  <a href="#" class="btn text-white bg-info ">Bạn muốn được gọi lại?</a>
+                </div>
+              </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">Khởi hành</th>
+                <th scope="col">Mã tour</th>
+                <th scope="col">Giá vé</th>
+                <th scope="col">Giá vé đã giảm</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr>
+                <th scope="row">{{products[index].start}}</th>
+                <td>{{products[index].matour}}</td>
+                <td class="text-decoration-line-through">{{products[index].price}}</td>
+                <td>{{products[index].sale}}</td>
+              
+                <td><button type="button"  ng-click="addCart(products[index])" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ĐẶT TOUR</button></td>
+              </tr>
+              <!-- <tr>
+                <th scope="row">{{detailPro.start}}</th>
+                <td>TN084-2024-00072</td>
+                <td>{{detailPro.sale}}</td>
+                <td>6.945.000</td>
+                <td>4.110.000</td>
+                <td><button type="button" ng-click="addCart(detaiPro)" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ĐẶT TOUR</button></td>
+              </tr>
+              <tr>
+                <th scope="row">{{detailPro.start}}</th>
+                <td>TN084-2024-00072</td>
+                <td>{{detailPro.sale}}</td>
+                <td>6.945.000</td>
+                <td>4.110.000</td>
+                <td><button type="button"  ng-click="addCart(detaiPro)" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ĐẶT TOUR</button></td>
+              </tr> -->
+            </tbody>
+          </table>
+                </div>
+                <!-- Modal -->
+<!-- Thêm modal Bootstrap -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Thành công!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Sản phẩm đã được thêm vào giỏ hàng.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+  flatpickr("#fromDate", {
+    dateFormat: "d/m/Y",
+    onChange: function(selectedDates, dateStr) {
+      var toDate = flatpickr("#toDate");
+      toDate.set("minDate", dateStr);
+    }
+  });
+
+  flatpickr("#toDate", {
+    dateFormat: "d/m/Y",
+  });
+</script>
+    <div class="container">
+        
+        </div>
+    </div>
+</div>
+</div>
+ <div class="container">
+    <p> <strong>Tour này có gì hay</strong><br>
+        {{detailPro.sta1}}<br>
+        {{detailPro.sta2}}<br>
+        {{detailPro.sta3}}<br>
+        {{detailPro.sta4}}<br>
+        {{detailPro.sta5}}<br>
+        {{detailPro.sta6}}<br>
+        </p>
+        <!--<button style="background-color: orangered; color: #fff">IN CHƯƠNG TRÌNH TOUR</button>-->
+ </div>
+ <!-- <div class="container text-center m-3">
+    <div class="row p-3">
+      <div class="col">
+        <img src="https://happytour.com.vn/public/userfiles/tour/87/Lang-Bac.jpg" alt="" style="width: 300px;">
+      </div>
+      <div class="col">
+        <img src="https://asiagatetravel.vn/wp-content/uploads/2022/11/trang_an.jpg" alt="" style="width: 300px;">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <img src="https://sinhtour.vn/wp-content/uploads/2021/04/tour-du-lich-cat-cat-ham-rong-cap-treo-fansipan-03-ngay-02-dem00003.jpg" alt="" style="width: 300px;">
+      </div>
+      <div class="col">
+        <img src="https://elitetour.com.vn/files/images/tourxuyenviet/danh-thang-trang-an.jpg" alt=""  style="width: 300px;">
+      </div>
+      <div class="col">
+        <img src="https://goldensmiletravel.com/uploads/images/admingst/2022/10/11/gst-ninh-binh-1665501760.jpg" alt=""  style="width: 300px;">
+      </div>
+    </div>
+  </div>-->
+ <!--Tab
+ <nav class="bg-info-subtle ">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Chương trình tour</button>
+      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Chính sách tour</button>
+      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Thủ tục & Visa</button>
+      
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">-->
+        <!--Chương trình
+        <div class="container">
+            <div class="commonInfo">
+                <p></p><p><strong>NGÀY&nbsp;01: TP. HCM - HÀ NỘI - NINH BÌNH </strong><strong>(Ăn trưa, chiều)</strong><br>
+Buổi sáng, quý khách tập trung tại <strong>Cổng D2 – Ga đi trong nước – SB.Tân Sơn Nhất</strong>. Hướng dẫn viên&nbsp;Lữ hành Saigontourist đón quý khách và hỗ trợ làm thủ tục. Khởi hành ra Hà Nội <strong>trên chuyến bay</strong> <strong>VN206</strong> <strong>lúc 6h00</strong>. Đáp xuống sân bay Nội Bài, xe đưa đoàn theo đường cao tốc đến Ninh Bình, viếng <strong>chùa Bái Đính</strong>, tham quan <strong>Khu du lịch&nbsp;Tràng An – </strong>có cảnh quan ngoạn mục với hệ thống sông, suối chảy tràn trong các thung lũng, các hang xuyên thủy động, các dãy núi đá vôi trùng điệp. Khu du lịch nằm trong quần thể danh thắng Tràng An đã được UNESCO công nhận di sản hỗn hợp đầu tiên của Việt Nam và khu vực ĐNÁ (đạt cả hai tiêu chí về văn hóa và thiên nhiên). Buổi tối, đoàn tự do khám phá <strong>phố cổ Hoa Lư</strong>, ngắm <strong>tháp Chùa Bạc</strong> lung linh ánh đèn soi bóng bên <strong>hồ Kỳ Lân</strong>. Nghỉ đêm tại Ninh Bình.</p>
+
+<p style="text-align: center;"><img alt="" src="https://saigontourist.net/uploads/destination/TrongNuoc/Ninhbinh/Trang-An-Scenic-Landscape-Complex_714892273.jpg" style="width: 100%;"><strong>Khu du lịch&nbsp;Tràng An</strong></p>
+
+<p><strong>NGÀY&nbsp;02</strong>: <strong>NINH BÌNH - HẠ LONG (Ăn sáng, trưa, chiều)</strong><br>
+Buổi sáng, đoàn khởi hành đi Hải Phòng, tiếp tục theo đường cao tốc đến Hạ Long. Quý khách lên thuyền du ngoạn <strong>vịnh Hạ Long </strong>- một trong 7 kỳ quan thiên nhiên mới của thế giới, chiêm ngưỡng <strong>động Thiên Cung</strong>, <strong>các hòn Đỉnh Hương - Trống Mái (Gà Chọi)- Chó Đá.</strong> Nghỉ đêm tại Hạ Long.<br>
+<u>Lựa chọn (tự túc chi phí di chuyển &amp; tham quan): </u><br>
+- Trải nghiệm <strong>xe bus 2 tầng</strong> vừa khai thác từ T2.2023, chiêm ngưỡng cảnh quan trên trục đường ven biển thành phố Hạ Long<br>
+- Tham quan <strong>Quần thể Du lịch - Giải trí Sun World Hạ Long Park,</strong> gồm 2 khu công viên vui chơi ven biển Bãi Cháy và&nbsp; trên núi Ba Đèo - được kết nối với nhau bởi hệ thống <strong>cáp treo vượt biển Nữ Hoàng </strong>đạt 2 kỷ lục thế giới (cabin có sức chứa lớn nhất thế giới và cáp treo có trụ cao nhất thế giới so với mặt đất). Trải nghiệm trò chơi mạo hiểm,&nbsp; <strong>Vòng quay Mặt Trời</strong> - một trong những vòng quay cao nhất thế giới,...</p>
+
+<p style="text-align: center;"><img alt="" src="https://saigontourist.net/uploads/destination/TrongNuoc/Halong/HaLong_1125675125.jpg" style="width: 100%;"><strong>Vịnh Hạ Long</strong></p>
+
+<p><strong>NGÀY&nbsp;03</strong>: <strong>HẠ LONG - HÀ NỘI (Ăn sáng, trưa, chiều)</strong><br>
+Buổi sáng, xe đưa dạo quanh <strong>tuyến đường mới ven biển Hạ Long</strong> - từ bãi tắm nhân tạo Sunworld đến khu vực Hòn Gai, ngắm nhìn khu đô thị với những công trình hiện đại: <strong>Cung quy hoạch – hội chợ – triển lãm, </strong>tham quan<strong> Bảo tàng Quảng Ninh</strong>, ... Khởi hành về Hà Nội, tham quan <strong>Hoàng Thành Thăng Long, </strong>ngắm <strong>cột cờ Hà Nội. </strong>Buổi tối, đoàn tự do dạo quanh <strong>hồ Hoàn Kiếm, </strong>tham quan <strong>“36 phố phường” </strong>– khu phố cổ với những ngành nghề đặc trưng và truyền thống của cư dân Thủ Đô, tự túc trải nghiệm chương trình đêm tại <strong>Văn Miếu Quốc Tử Giám </strong>với chủ đề <strong>“Tinh Hoa Đạo Học” </strong>trong khung 19h – 22h thứ 4, thứ 7 &amp; CN hàng tuần. Nghỉ đêm tại Hạ Nội.</p>
+
+<p style="text-align: center;"><img alt="" src="https://saigontourist.net/uploads/destination/TrongNuoc/Hanoi/Van-Mieu-in-Hanoi_600215705.jpg" style="width: 100%;"> <strong>Văn Miếu Quốc Tử Giám</strong></p>
+
+<p><strong>NGÀY&nbsp;04</strong>: <strong>HÀ NỘI - SAPA&nbsp;(Ăn sáng, trưa, chiều)</strong><br>
+Buổi sáng, đoàn đến viếng <strong>Lăng Bác </strong>(*). Khởi hành đi Sapa, đoàn tự do tham quan <strong>nhà thờ đá</strong>, dạo<strong> chợ Sapa</strong>... Nghỉ đêm tại Sapa.&nbsp;&nbsp;</p>
+
+<p style="text-align: center;"><img alt="" src="https://saigontourist.net/uploads/destination/TrongNuoc/Hanoi/Ba-Dinh-Square-in-Hanoi-Vietnam_428152555.jpg" style="width: 100%;"><strong>Lăng Bác </strong>(*)</p>
+
+<p><strong>NGÀY&nbsp;05: SAPA - FANSIPAN - LÀO CAI (Ăn sáng, trưa, chiều)</strong><br>
+Buổi sáng, đoàn đến <strong>Nhà ga cáp treo Fansipan</strong>, quý khách tự do <strong>tham quan khu vực vườn hoa, chợ phiên, mua sắm, </strong>... Quý khách tự túc chi phí trải nghiệm <strong>cáp treo, chinh phục đỉnh Fansipan </strong>với hệ thống cáp treo 3 dây hiện đại với cảm giác đi giữa biển mây<strong>. </strong>Viếng <strong>khu tâm linh Fanpsian,</strong> vượt gần 600 bậc thang, <strong>chinh phục “Nóc nhà Đông Dương” – đỉnh Fansipan 3,143m</strong>. Buổi chiều, đoàn tham quan <strong>bản Cát Cát. </strong>Xe đón đoàn về Lào Cai. Nghỉ đêm tại Lào Cai.<br>
+<strong>Lưu ý: Giai đoạn 08.01 – 08.02.2024, cáp treo + tàu hỏa leo núi Fansipan ngưng hoạt động để bảo trì. Đoàn sẽ đến tham quan Khu du lịch&nbsp;Cổng Trời (tự túc chi phí tham quan).</strong></p>
+
+<p style="text-align: center;"><img alt="" src="https://saigontourist.net/uploads/destination/TrongNuoc/mienbac/Fasipan-mountain-hoang-lien-son_769266166.jpg" style="width: 100%;"><strong>Khu tâm linh Fanpsian</strong></p>
+
+<p><strong>NGÀY&nbsp;06: LÀO CAI <strong>– PHÚ THỌ - NỘI BÀI </strong>- TP.HCM (Ăn sáng, trưa)</strong><br>
+Sau bữa sáng, đoàn tham quan <strong>cột mốc biên giới</strong> và <strong>cửa khẩu quốc tế Lào Cai, </strong>mua sắm tại <strong>chợ Cốc Lếu</strong>. Khởi hành về Hà Nội. Trên hành trình, đoàn dừng chân tại Phú Thọ, viếng <strong>Khu di tích&nbsp;Đền Hùng </strong>– thăm <strong>đền Hạ, đền Trung, đền Thượng, lăng Vua Hùng.</strong> Xe đưa đoàn ra SB Nội Bài, về TP. Hồ Chí Minh <strong>trên chuyến bay</strong> <strong>VN219 lúc 19h00</strong>. Kết thúc chương trình.</p>
+
+<p style="text-align: center;"><img alt="" src="https://saigontourist.net/uploads/destination/TrongNuoc/mienbac/hung-king-temple-phutho.jpg" style="width: 100%;"><strong>Khu di tích&nbsp;Đền Hùng</strong></p>
+
+<p><strong>Ghi chú</strong>:<br>
+- (*) Lăng Chủ tịch Hồ Chí Minh đóng cửa vào thứ 2, 6 hàng tuần. Trong những ngày này, Quý khách sẽ tham quan bên ngoài lăng, gồm: quảng trường Ba Đình, khu di tích Phủ Chủ tịch. Không vào viếng bên trong lăng.<br>
+- Điểm tham quan có thể sắp xếp lại cho phù hợp mà vẫn bảo đảm đầy đủ nội dung của từng chương trình.<br>
+- Giờ bay có thể bị thay đổi bởi hãng hàng không</p><p></p>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">-->
+      <!--Chính sách
+      <div class="commonInfo">
+        <p>
+            </p><p align="center"><strong>GIÁ TOUR CHO KHÁCH GHÉP ĐOÀN&nbsp;&nbsp;</strong><em>(Đơn vị tính: đồng/ khách)</em></p>
+
+<table align="center"  cellpadding="0" cellspacing="0" style="width:743px; border:3px solid black" width="743px">
+<tbody>
+<tr>
+<td colspan="2" style="width:340px;height:1px; border:3px solid black">
+<p align="center"><strong><em>KHÁCH SẠN 3 SAO</em></strong></p>
+</td>
+<td style="width:97px;height:1px; border:3px solid black">
+<p align="center"><strong><em>NGƯỜI LỚN</em></strong></p>
+</td>
+<td style="width:94px;height:1px; border:3px solid black">
+<p align="center"><strong><em>TRẺ EM</em></strong></p>
+
+<p align="center"><strong><em>6 – 11 TUỔI</em></strong></p>
+</td>
+<td style="width:84px;height:1px; border:3px solid black">
+<p align="center"><strong><em>TRẺ EM</em></strong></p>
+
+<p align="center"><strong><em>2 – 5 TUỔI</em></strong></p>
+</td>
+<td style="width:128px;height:1px; border:3px solid black">
+<p align="center"><strong><em>KHÁCH CAO NIÊN </em></strong><em>(Từ 60 tuổi trở lên)</em></p>
+</td>
+</tr>
+<tr>
+<td style="width:125px;height:1px; border:3px solid black">
+<p align="center"><strong><em>GIÁ TRỌN GÓI</em></strong></p>
+
+<p align="center"><strong><em>(bao gồm Vé máy bay)</em></strong></p>
+</td>
+<td style="width:215px;height:1px; border:3px solid black">
+<p align="center"><strong><em>KH: 08, 15, 22/01; 26/02/2024; </em></strong></p>
+
+<p align="center"><strong><em>04, 11, 18, 25/03/2024</em></strong></p>
+</td>
+<td style="width:97px;height:1px; border:3px solid black">
+<p align="center"><strong><em>12.079.000</em></strong></p>
+</td>
+<td style="width:94px;height:1px; border:3px solid black">
+<p align="center"><strong><em>8.095.000</em></strong></p>
+</td>
+<td style="width:84px;height:1px; border:3px solid black">
+<p align="center"><strong><em>4.110.000</em></strong></p>
+</td>
+<td style="width:128px;height:1px; border:3px solid black">
+<p align="center"><strong><em>11.779.000</em></strong></p>
+</td>
+</tr>
+<tr>
+<td style="width:125px;height:1px; border:3px solid black">
+<p align="center"><strong><em>GIÁ LANDTOUR</em></strong></p>
+</td>
+<td style="width:215px;height:1px; border:3px solid black">
+<p align="center"><strong><em>KH: 29/01 &amp; 19/02/2024</em></strong></p>
+</td>
+<td style="width:97px;height:1px; border:3px solid black">
+<p align="center"><strong><em>8.400.000</em></strong></p>
+</td>
+<td style="width:94px;height:1px; border:3px solid black">
+<p align="center"><strong><em>4.200.000</em></strong></p>
+</td>
+<td style="width:84px;height:1px; border:3px solid black">
+<p align="center"><strong><em>0</em></strong></p>
+</td>
+<td style="width:128px;height:1px; border:3px solid black">
+<p align="center"><strong><em>8.100.000</em></strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="width:340px;height:2px; border:3px solid black">
+<p align="center"><strong><em>Phụ thu phòng đơn</em></strong></p>
+</td>
+<td colspan="4" style="width:403px;height:2px; border:3px solid black">
+<p align="center"><strong><em>+2.200.000</em></strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<div style="clear:both;"><br>
+<strong>* Vé trẻ em:&nbsp;</strong><br>
+- Trẻ em dưới 2 tuổi:&nbsp;<strong>thu 500.000đ/ trẻ</strong>. Gia đình tự lo cho bé ăn ngủ<br>
+- Trẻ em từ 2 đến dưới 6 tuổi: tiêu chuẩn gồm Vé máy bay. Gia đình tự lo cho bé ăn ngủ và phí tham quan Hai người lớn chỉ được kèm một trẻ em dưới 6 tuổi. Từ trẻ thứ 2 trở lên, mỗi em đóng bằng giá trẻ em từ 6-11 tuổi<br>
+- Trẻ em từ 6 - 11 tuổi: tiêu chuẩn gồm Vé máy bay, ăn uống và tham quan theo chương trình, ngủ chung giường với phụ huynh<br>
+- Trẻ em trên 11 tuổi: áp dụng giá và các tiêu chuẩn dịch vụ như người lớn<br>
+&nbsp;</div>
+
+<p><strong>* Giá tour trọn gói bao gồm:&nbsp;&nbsp;</strong><br>
+-&nbsp;<strong>Vé máy bay khứ hồi</strong><br>
+- Chi phí xe máy lạnh theo chương trình.<br>
+- Chi phí khách sạn: 2-3 khách/phòng ;&nbsp;Lẻ khách ngủ giường phụ hoặc chịu chi phí phụ thu phòng đơn:&nbsp;<br>
+- Chi phí ăn – uống theo chương trình.<br>
+- Phí tham quan, thuyền theo chương trình.<br>
+- Chi phí Hướng dẫn viên tiếng Việt.<br>
+- Quà tặng: Nón, nước suối, khăn lạnh.<br>
+<br>
+<strong>* Giá tour không bao gồm:&nbsp;&nbsp;</strong><br>
+- Chi phí tham quan - ăn uống ngoài chương trình, giặt ủi, điện thoại và các chi phí cá nhân.<br>
+<strong>- Vé cáp treo tham quan đỉnh Fansipan&nbsp;<br>
+- Chi phí phụ thu phòng đơn:&nbsp;<br>
+-&nbsp;Lưu ý: Hạn chế tham gia với những khách cao huyết áp, bệnh tim mạch, sợ độ cao; người cao tuổi; trẻ em.</strong></p>
+
+<p><strong>THÔNG TIN HƯỚNG DẪN</strong><br>
+* Quy định vé máy bay: Đây là chương trình hợp tác với hãng hàng không Vietnam Airlines nên có một số lưu ý:<br>
+-&nbsp;Giá vé máy bay không bao gồm&nbsp;suất ăn/uống trên máy bay<br>
+-&nbsp;<strong>Không được hoàn hoặc hủy vé máy bay. Nếu hủy, vui lòng chịu phạt 100% chi phí vé máy bay</strong><br>
+-&nbsp;Khi đăng ký vé máy bay, quý khách cung cấp họ và tên, ngày tháng năm sinh (đúng từng ký tự ghi trong hộ chiếu hoặc chứng minh ngân dân/căn cước công dân)<br>
+-&nbsp;Không được thay đổi thông tin đặt chỗ: họ tên hành khách, chuyến bay, ngày bay, chặng bay, tách đoàn, gia hạn vé<br>
+-&nbsp;Số lượng khách tối thiểu để tổ chức tour:<strong>10 khách/đoàn</strong><br>
+-&nbsp;<strong>&nbsp;Du khách được miễn cước 1 KIỆN (23 kg) hành lý ký gởi và 1 KIỆN (10kg) hành lý xách tay</strong><br>
+-&nbsp;Trường hợp hủy tour do sự cố khách quan như thiên tai, dịch bệnh hoặc do máy bay hoãn - hủy chuyến, Lữ hành Saigontourist sẽ không chịu trách nhiệm bồi thường thêm bất kỳ chi phí nào khác ngoài việc hoàn trả chi phí những dịch vụ chưa được sử dụng của tour đó (ngoại trừ chi phí vé máy bay)<br>
+<strong>* Trường hợp hủy vé landtour, quý khách vui lòng thanh toán các khoản sau:</strong><br>
+-&nbsp;Quý khách chuyển đổi tour sang ngày khác và báo trước ngày khởi hành trước 15 ngày sẽ không chịu phí (không áp dụng các tour KS 4-5 sao), nếu trễ hơn sẽ căn cứ theo qui định hủy phạt phía dưới và chỉ được chuyển ngày khởi hành tour 1 lần.<br>
+-&nbsp;Hủy vé trong vòng 24 giờ hoặc ngay ngày khởi hành, chịu phạt 100% tiền tour.<br>
+-&nbsp;Hủy vé trước ngày khởi hành từ 2 - 7 ngày, chịu phạt 80% tiền tour.<br>
+&nbsp;-&nbsp;Hủy vé trước ngày khởi hành từ 8 - 14 ngày, chịu phạt 50% tiền tour.<br>
+&nbsp;-&nbsp;Hủy vé trước ngày khởi hành từ 15 ngày trở lên, chịu phạt 30% tiền tour.<br>
+Sau khi hủy tour, du khách vui lòng đến nhận tiền trong vòng 15 ngày kể từ ngày kết thúc tour. Chúng tôi chỉ thanh toán trong khỏang thời gian nói trên.<br>
+<strong>* Hành lý và giấy tờ tùy thân:</strong>&nbsp;&nbsp;<br>
+-&nbsp;Du khách mang theo giấy tờ tùy thân còn thời hạn sử dụng: chứng minh nhân dân/căn cước công dân hoặc Hộ chiếu.<br>
+- Đối với du khách là Việt kiều, Quốc tế nhập cảnh Việt Nam bằng visa rời, vui lòng mang theo visa khi đăng ký và khi đi tour.<br>
+-&nbsp;Khách lớn tuổi&nbsp;<strong>(từ 70 tuổi trở lên),</strong>&nbsp;khách tàn tật tham gia tour, phải có thân nhân đi kèm và cam kết đảm bảo đủ sức khỏe khi tham gia tour du lịch.<br>
+-&nbsp;Trẻ em&nbsp;<strong>dưới 14 tuổi k</strong>hi đi tour phải mang theo&nbsp;<strong>giấy khai sinh hoặc hộ chiếu.</strong>&nbsp;Trẻ em từ 14 tuổi trở lên phải mang theo<strong>&nbsp;giấy chứng minh nhân dân/căn cước công dân/ hộ chiếu.</strong><br>
+-&nbsp;<strong>Tất cả giấy tờ tùy thân mang theo đều phải bản chính</strong><br>
+-&nbsp;Du khách mang theo hành lý gọn nhẹ và phải tự bảo quản hành lý, tiền bạc, tư trang trong suốt thời gian đi du lịch.<br>
+-&nbsp;Khách Việt Nam ở cùng phòng với khách Quốc tế&nbsp; hoặc Việt kiều yêu cầu phải có giấy hôn thú.<br>
+-&nbsp;Quý khách có mặt tại sân bay&nbsp;<strong>trước 3 tiếng</strong>&nbsp;so với giờ khởi hành.<br>
+<strong>* Ghi chú khác:</strong><br>
+-&nbsp;Công ty xuất hóa đơn cho du khách có nhu cầu (Trong thời hạn 7 ngày sau khi kết thúc chương trình du lịch). Du khách được chọn một trong những chương trình khuyến mãi dành cho khách lẻ định kỳ (Nếu có).<br>
+-&nbsp;Quý khách có mặt tại điểm đón trước 15 phút. Trong trường hợp đến trễ khi xe đã khởi hành; Không làm thủ tục đúng giờ (khi hãng hàng không đã đóng quầy, kết thúc chấp nhận hành khách); Không lên máy bay trước giờ đóng cửa lên máy bay, hoặc hủy tour không báo trước vui lòng chịu phí như ‘hủy vé ngay ngày khởi hành’</p>
+        <p></p>
+    </div>
+    </div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">-->
+      <!--Visa
+      <div class="col-xs-12">
+        <div class="commonInfo">
+            <p>
+                </p><p><strong><span style="background-color:#FFD700;">1/ Lữ hành Saigontourist có bố trí bữa ăn sáng ngày đầu tiên trong tour không ?</span></strong><br>
+Hầu hết các tour bay sáng với hành trình dài nên khi đáp thì đã quá giờ dùng điểm tâm nên thông thường Lữ hành Saigontourist không có bố trí bữa sáng.</p>
+
+<p><strong><span style="background-color:#FFD700;">2/ Nếu tôi đã có vé máy bay thì có được trừ tiền không?</span></strong><br>
+Nếu quý khách đã có vé máy bay thì Lữ hành Saigontourist sẽ trừ chi phí này.</p>
+
+<p><strong><span style="background-color:#FFD700;">3/ Khi đi tour Hạ Long, tôi có thể ngủ đêm trên tàu không ?</span></strong><br>
+Hiện tại với các hành trình tour đi chung với những khách khác thì Lữ hành Saigontourist chưa bố trí ngủ đêm trên tàu ở Vịnh Hạ Long do chi phí hơi cao. Nếu quý khách có nhu cầu này vui lòng báo với nhân viên để được tư vấn.</p>
+
+<p><strong><span style="background-color:#FFD700;">4/ Tôi cần lưu ý gì khi đi tham quan Lăng Bác ?</span></strong><br>
+Khi đi tham quan Lăng Bác, quý khách vui lòng mặc trang phục gọn gàng lịch sự, kín đáo và tham quan theo hướng dẫn của ban quản lý Lăng</p>
+
+<p><strong><span style="background-color:#FFD700;">5/ Ngoài các điểm tham quan có trong tour thì tôi có thể tham quan điểm nào khác không ?</span></strong><br>
+Ngoài các điểm tham quan trong chương trình tour thì quý khách có thể tự túc tham quan thêm một số nơi khác: khu vui chơi giải trí Sun World Hạ Long Park, Khu du lịch Tuần Châu,…</p>
+
+<p><strong><span style="background-color:#FFD700;">6/ Làm sao để lên được đỉnh Fansipan ?</span></strong><br>
+Qúy khách sẽ trải nghiệm hệ thống cáp treo Fansipan 3 dây hiện đại đến Viếng khu tâm linh Fanpsian, sau đó vượt gần 600 bậc thang hoặc quý khách có thể trải nghiệm tàu hỏa leo núi để chinh phục “Nóc nhà Đông Dương” - đỉnh Fansipan 3,143m .</p>
+
+<p><strong><span style="background-color:#FFD700;">7/ Tôi không muốn đi Hạ Long, chỉ muốn đi Sapa không thì mất bao nhiêu ngày ?</span></strong><br>
+Nếu quý khách đã đi Hạ Long rồi thì chỉ cần 3 ngày là có thể tham quan Sapa khá trọn vẹn</p>
+
+<p><strong><span style="background-color:#FFD700;">8/ Đi Hà Nội tôi có thể mua gì làm quà ?</span></strong><br>
+Ngoài các đặc sản nức tiếng như: mơ, mận, sấu, xí muội thì quý khách còn có thể mua thêm bánh cốm, bánh đậu xanh,..</p>
+            <p></p>
+        </div>
+    </div>
+    </div>
+    
+  </div>
+  -->

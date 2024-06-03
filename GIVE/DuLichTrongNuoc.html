@@ -1,0 +1,319 @@
+
+          <!--SlideShow-->
+          <div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            </div>
+            <div class="carousel-inner" style="height: 70vh; min-height: 300px;">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="https://ddk.1cdn.vn/2023/12/08/2106384_vinh_ha_long_la_ve_dep_ket_hop_tu_dat_nuoc_va_bau_troi_anh_do_phuong_10004320.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption card-img-overlay d-flex align-items-center justify-content-center" style="margin-top: 180px;">
+                  <div class="bg-dark bg-opacity-50" style="padding: 15px;">
+                    <h5 class="text-light text-center fw-bolder">TOUR TRONG NƯỚC</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+<!--Search2-->
+<div class="container" style="padding: 20px">
+    <form class="row gx-3 gy-2 align-items-center">
+        <div class="col-sm-4">
+          <label class="visually-hidden" for="specificSizeInputName">Tìm Kiếm</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Tìm Kiếm Tour">
+            <div class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+              </svg></i></div>
+          </div>
+    
+        </div>
+        <div class="col-sm-2">
+          <label class="visually-hidden" for="fromDate">Từ Ngày</label>
+         <div class="input-group">
+            <input type="text" class="form-control" id="fromDate" placeholder="Từ Ngày">
+            <div class="input-group-text"><i class="bi bi-calendar"></i></div>
+          </div>
+        </div>
+        <div class="col-sm-2">
+            <label class="visually-hidden" for="toDate">Đến Ngày</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="toDate" placeholder="Đến Ngày">
+              <div class="input-group-text"><i class="bi bi-calendar"></i></div>
+            </div>
+          </div>
+        <div class="col-sm-2">
+            <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+            <select class="form-select" id="specificSizeSelect">
+              <option selected>Trong Nước</option>
+              <option value="1">Ngoài Nước</option>
+              <option value="2">Tất Cả</option>
+            </select>
+          </div>
+        <div class="col-auto">
+          <button class="btn btn-warning" ng-click="show" data-toggle="modal" data-target="#exampleModal">Tìm Kiếm</button>
+        </div>
+        <div>
+      </form>
+</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+  flatpickr("#fromDate", {
+    dateFormat: "d/m/Y",
+    onChange: function(selectedDates, dateStr) {
+      var toDate = flatpickr("#toDate");
+      toDate.set("minDate", dateStr);
+    }
+  });
+
+  flatpickr("#toDate", {
+    dateFormat: "d/m/Y",
+  });
+</script>
+    <!-- <div class="container">
+        <div class="card mb-3" style="max-width: 1200px;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://statics.vinpearl.com/ho-tay-1_1687018394.jpg" class="img-fluid rounded-start" >
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">Du Lịch Hà Nội</h5>
+                <p class="card-text">TP. HỒ CHÍ MINH - HÀ NỘI | HẠ LONG | NINH BÌNH </p>
+                <p class="card-profile">
+                    <div><i class="bi bi-clock"></i></i> Thời gian: 3 ngày 3 đêm</div>
+                    <div><i class="bi bi-car-front-fill"></i> Phương tiện: ô tô</div>
+                    <div><i class="bi bi-building"></i> Khách sạn:<div class="text-warning "><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div> </div>
+                    <div><i class="bi bi-calendar-event-fill"></i> Ngày đi: 2/9/2023</div>
+                </p>
+                <a href="#!ChiTiet" class="btn btn-primary float-end mt-2 text-white bg-warning">Xem thêm...</a>  
+                <a href="#" class="btn btn-primary float-end mt-2 text-white bg-warning" data-bs-toggle="modal"
+                data-bs-target="#exampleModal" style="margin: 20px;">9.779.000 đ</a>
+                <div class="modal fade" id="exampleModal" tabindex="1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content text-white bg-warning" style="height: 500px; width: 800px">
+                    <div class="modal-header" id="exampleModalLabel">
+                        <i class="bi bi-pencil-square"></i>
+                        <span>CHỌN NGÀY KHỞI HÀNH</span>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Khởi hành</th>
+                                <th scope="col">Mã tour</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col">Giá trẻ em</th>
+                                <th scope="col">Giá em bé</th>
+                                <th></th>
+                              </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                              <tr>
+                                <th scope="row">20/01/2024</th>
+                                <td>TN084-2024-00072</td>
+                                <td>9.779.000</td>
+                                <td>6.945.000</td>
+                                <td>4.110.000</td>
+                                <td><button>ĐẶT TOUR</button></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">20/01/2024</th>
+                                <td>TN084-2024-00072</td>
+                                <td>9.779.000</td>
+                                <td>6.945.000</td>
+                                <td>4.110.000</td>
+                                <td><button>ĐẶT TOUR</button></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">20/01/2024</th>
+                                <td>TN084-2024-00072</td>
+                                <td>9.779.000</td>
+                                <td>6.945.000</td>
+                                <td>4.110.000</td>
+                                <td><button>ĐẶT TOUR</button></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                                </div>
+                            </div>
+                            
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="card mb-3" style="max-width: 1200px;">
+        <div class="row g-0">
+        <div class="col-md-4">
+            <img src="https://ds393qgzrxwzn.cloudfront.net/cat1/img/images/0/9HOSsjU2ny.jpg" class="img-fluid rounded-start" >
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title">Du Lịch Bến Tre</h5>
+            <p class="card-text">TP. HỒ CHÍ MINH - MIỀN TÂY</p>
+            <p class="card-profile">
+                <div><i class="bi bi-clock"></i></i> Thời gian: 6 ngày 5 đêm</div>
+                <div><i class="bi bi-car-front-fill"></i> Phương tiện: ô tô</div>
+                <div><i class="bi bi-building"></i> Homestay </div>
+                <div><i class="bi bi-calendar-event-fill"></i> Ngày đi: 25/9/2023</div>
+            </p>
+            <a href="#" class="btn btn-primary float-end mt-2 text-white bg-warning">8.479.000</a>  
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container">
+    <div class="card mb-3" style="max-width: 1200px;">
+        <div class="row g-0">
+        <div class="col-md-4">
+            <img src="https://media.baobinhphuoc.com.vn/upload/news/5_2023/c29efc89b1a8554f27a79a5bf6bdf6a0.jpg" class="img-fluid rounded-start" >
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title">Du Lịch Hà Nội - SaPa - FANXIPAN</h5>
+            <p class="card-text">Hà Nội - Sa Pa</p>
+            <p class="card-profile">
+                <div><i class="bi bi-clock"></i></i> Thời gian: 3 ngày 2 đêm</div>
+                <div><i class="bi bi-car-front-fill"></i> Phương tiện: ô tô</div>
+                <div><i class="bi bi-building"></i> Homestay </div>
+                <div><i class="bi bi-calendar-event-fill"></i> Ngày đi: 21/9/2023</div>
+            </p>
+            <a href="#" class="btn btn-primary float-end mt-2 text-white bg-warning">3.499.000</a>  
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container ">
+    <div class="card mb-3" style="max-width: 1200px;">
+        <div class="row g-0">
+        <div class="col-md-4">
+            <img src="https://ik.imagekit.io/tvlk/blog/2023/02/du-lich-phu-quoc-thang-10-1.jpg?tr=dpr-2,w-675" class="img-fluid rounded-start" >
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title">Du Lịch Phú Quốc - Lặn Ngắm San Hô - Ca Nô Tham Quan Đảo</h5>
+            <p class="card-text">TP. HỒ CHÍ MINH - PHÚ QUỐC </p>
+            <p class="card-profile">
+                <div><i class="bi bi-clock"></i></i> Thời gian: 3 ngày 2 đêm</div>
+                <div><i class="bi bi-car-front-fill"></i> Phương tiện: Hàng Không Vietnam Airlines</div>
+                <div><i class="bi bi-building"></i> Homestay </div>
+                <div><i class="bi bi-calendar-event-fill"></i> Ngày đi: 15/9/2023</div>
+            </p>
+            <a href="#" class="btn btn-primary float-end mt-2 text-white bg-warning">6.979.000</a>  
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container">
+    <div class="card mb-3" style="max-width: 1200px;">
+        <div class="row g-0">
+        <div class="col-md-4">
+            <img src="https://vcdn1-dulich.vnecdn.net/2022/05/09/shutterstock-280926449-6744-15-3483-9174-1652070682.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=bGCo6Rv6DseMDE_07TT1Aw" class="img-fluid rounded-start" >
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title">Du Lịch Nha Trang</h5>
+            <p class="card-text">TP. HỒ CHÍ MINH - HÀ NỘI | HẠ LONG | NINH BÌNH </p>
+            <p class="card-profile">
+                <div><i class="bi bi-clock"></i></i> Thời gian: 3 ngày 3 đêm</div>
+                <div><i class="bi bi-car-front-fill"></i> Phương tiện: ô tô</div>
+                <div><i class="bi bi-building"></i> Resort: <div class="text-warning "><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>  </div>
+                <div><i class="bi bi-calendar-event-fill"></i> Ngày đi: 27/9/2023</div>
+            </p>
+            <a href="#" class="btn btn-primary float-end mt-2 text-white bg-warning">3.879.000</a>  
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div> -->
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end p-md-3 ">
+    <div ng-controller="myCtrl"></div>
+  <button class="btn btn-primary" ng-click="tang()"><i class="bi bi-sort-up"></i> Tăng dần</button>
+ <button class="btn btn-primary" ng-click="giam()"><i class="bi bi-sort-down"></i> Giảm dần</button>
+ </div>
+<div class="row">
+
+  <!--Grid-->
+  </div>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-3 my-3" ng-repeat="p in products | filter: key | limitTo: 4 : page | orderBy : sort  " >
+        <div class="card shadow position-relative">
+          <img
+            class=""
+            src="{{p.image}}"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title text-success">{{p.name}}</h5>
+            <p class="text-danger m-0"><b>Giá: {{p.sale |number}} đ</b></p>
+            <p class=""><del>Giá: {{p.price |number}} đ</del></p>
+            <p>
+              <i class="bi bi-clock"></i> Thời gian: {{p.duration}}
+              <br />
+              <i class="bi bi-car-front-fill"></i> Phương tiện: {{p.transport}}<br>
+              <i class="bi bi-building"></i> Nơi ở: {{p.hotel}} <br>
+              <i class="bi bi-calendar-event-fill"></i>  Ngày đi: {{p.start}}
+            </p>
+            <div class="text-center">
+              <a href="#!detail/{{p.id}}" class="btn btn-warning text-white" onclick="window.scrollTo(0, 0);">Xem chi tiết</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
+  
+  </div>
+  <!--Page-->
+  <div class="col-12 mt-5">
+    <nav aria-label="Page navigation example justify-content-center mt-5 ">
+        <ul class="pagination justify-content-lg-center">
+            <li class="page-item">
+                <button class="page-link {{(page==1)?'disabled':''}}" href="#" aria-label="Previous"
+                    ng-click="chontrang(page-1)">
+                    <span aria-hidden="true">&laquo;</span>
+                </button>
+            </li>
+            <li ng-repeat="trang in dsTrang" class="page-item {{ (trang==page)?'active':'' }}">
+                <button class="page-link" ng-click="chontrang(trang)"> {{trang}} </button>
+            </li>
+            <li class="page-item">
+                <button class="page-link {{(page==tongTrang)?'disabled':''}}" href="#" aria-label="Next"
+                    ng-click="chontrang(page+1)">
+                    <span aria-hidden="true">&raquo;</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</div>
+  
